@@ -28,11 +28,11 @@ export const MockToDo = () => {
             {isLoading
                 ? <p>Подождите, идет загрузка данных...</p>
                 : <div>
-                    <h1>Список Пользователей</h1>
+                    <h1>Список дел</h1>
                     <ol className={styles['todo-list']}>
                         {users.map(({id, title}) => (
                             <li key={id} className={styles['todo-item']}>
-                                <div>Заголовок: {title}</div>
+                                <div>{title}</div>
                             </li>
                         ))}
                     </ol>
