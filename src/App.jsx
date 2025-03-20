@@ -1,10 +1,10 @@
 import './App.css'
+import { MockToDo } from './components/MockToDo'
 
 function App() {
-
   return (
     <>
-        Request from server task 1
+      <MockToDo />
     </>
   )
 }
