@@ -1,28 +1,43 @@
-import { useEffect, useState } from 'react'
+import {useEffect, useState} from 'react'
+
+import styles from './MockToDo.module.css'
 import {userData} from './userData'
 
 
 export const MockToDo = () => {
     const [users, setUsers] = useState([])
+    const [isLoading, setIsLoading] = useState(false)
 
     useEffect(() => {
-        new Promise((resolve) => {
-            resolve({json: () => userData})
-        })
-        .then((loadedData) => loadedData.json())
-        .then((loadedUsers) => setUsers(loadedUsers))
+        setIsLoading(true)
+
+        setTimeout(() => {
+            new Promise((resolve) => {
+                resolve({json: () => userData})
+            })
+                .then((loadedData) => loadedData.json())
+                .then((loadedUsers) => setUsers(loadedUsers))
+                .finally(() => {
+                    setIsLoading(false)
+                })
+        }, 3000)
     }, [])
+
     return (
         <div>
-            <h1>Список Пользователей</h1>
-            <ul>
-                {users.map(({id, title, completed}) => (
-                    <li key={id}>
-                        <div>Закголовок: {title}</div>
-                        <div>Состояние: {completed}</div>
-                    </li>
-                ))}
-            </ul>
+            {isLoading
+                ? <p>Подождите, идет загрузка данных...</p>
+                : <div>
+                    <h1>Список Пользователей</h1>
+                    <ol className={styles['todo-list']}>
+                        {users.map(({id, title}) => (
+                            <li key={id} className={styles['todo-item']}>
+                                <div>Заголовок: {title}</div>
+                            </li>
+                        ))}
+                    </ol>
+                </div>
+            }
         </div>
     )
 }
