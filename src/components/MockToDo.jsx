@@ -7,6 +7,7 @@ export const MockToDo = () => {
   const [users, setUsers] = useState([])
   const [isLoading, setIsLoading] = useState(false)
 
+  // Загрузка данных при монтировании компонета
   useEffect(() => {
     setIsLoading(true)
 
@@ -16,6 +17,7 @@ export const MockToDo = () => {
       })
         .then((loadedData) => loadedData.json())
         .then((loadedUsers) => setUsers(loadedUsers))
+
         .finally(() => {
           setIsLoading(false)
         })
