@@ -1,12 +1,34 @@
-# React + Vite
+# Список дел (Todo List)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Это приложение "Список дел" разработано на базе React с использованием Vite. Оно позволяет пользователям просматривать список дел, получая данные из JSON Placeholder.
 
-Currently, two official plugins are available:
+## Функционал
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Вывод списка дел**: Приложение отображает список дел, где каждое дело представлено в виде небольшого текста. Пользователи могут легко просматривать все свои задачи.
 
-## Expanding the ESLint configuration
+- **Использование JSON Placeholder**: Данные для списка дел получаются из API JSON Placeholder по ручке (endpoint) «todos». Это позволяет динамически загружать и отображать задачи.
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **Дизайн**: Интерфейс приложения разработан с акцентом на аккуратность и приятный внешний вид, что делает его удобным для пользователей.
+
+## Технологии
+- React
+- Vite
+- JSON Placeholder для получения данных
+
+## Установка и запуск
+1. Клонируйте репозиторий:
+   ```bash
+   git clone <URL_репозитория>
+   ```
+2. Перейдите в директорию проекта:
+   ```bash
+   cd <имя_директории>
+   ```
+3. Установите зависимости:
+   ```bash
+   npm install
+   ```
+4. Запустите приложение:
+   ```bash
+   npm run dev
+   ```
